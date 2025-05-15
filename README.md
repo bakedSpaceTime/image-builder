@@ -6,6 +6,8 @@ Inspiration taken from [How to Save $17,000 a Month by Self-Hosting DeepSeek R1 
 
 ## Installation
 
+This project uses [UV][4]
+
 ```bash
 git clone https://github.com/bakedSpaceTime/image-builder.git
 cd image-builder
@@ -13,7 +15,7 @@ cd image-builder
 python -m venv .venv
 source .venv/bin/activate
 
-pip install -r requirements.txt
+uv sync
 ```
 
 ### Prerequisites
@@ -70,3 +72,4 @@ Run the build script
 [1]: https://medium.com/@vesharma.dev/how-to-save-17-000-a-month-by-self-hosting-deepseek-r1-on-google-cloud-run-gpu-6a186cc976b9
 [2]: https://cloud.google.com/blog/products/application-development/run-your-ai-inference-applications-on-cloud-run-with-nvidia-gpus/
 [3]: https://cloud.google.com/sdk/docs/install
+[4]: https://docs.astral.sh/uv/

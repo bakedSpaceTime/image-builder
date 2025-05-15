@@ -1,0 +1,9 @@
+[project]
+name = "image-builder"
+version = "0.1.0"
+description = "For building images using GCP Cloud Build"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "jinja2>=3.1.6",
+]
