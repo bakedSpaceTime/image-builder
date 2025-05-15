@@ -9,10 +9,13 @@ import argparse
 import subprocess
 from jinja2 import Template
 
+# Ollama environment variable definitions
+# https://github.com/ollama/ollama/issues/2941
 # Define the Jinja2 templates
 DOCKERFILE_TEMPLATE = """FROM ollama/ollama
 ENV HOME /root
 WORKDIR /
+ENV OLLAMA_KEEP_ALIVE -1
 RUN ollama serve & sleep 10 && ollama pull {{ model }}
 {% if additional_models %}{% for additional_model in additional_models %}
 RUN ollama serve & sleep 10 && ollama pull {{ additional_model }}{% endfor %}{% endif %}
@@ -203,7 +206,7 @@ if __name__ == "__main__":
 
     # Example of calling main() directly with argments
     options = {
-        "models_str": "qwen2.5-coder:32b,qwen2.5:32b",
+        "models_str": "qwen3:32b",
         "build_dir": "./build",
         "submit": True,
         "no_build_scripts": False,
