@@ -23,18 +23,18 @@ Instructions found here [Install the gcloud CLI][3]
 
 ## Usage
 
-The `main` function defined in `build.py` can take the script paremeters either through CLI options or by writing the arguments directly in the Python file.
+The `main` function defined in `main.py` can take the script paremeters either through CLI options or by writing the arguments directly in the Python file.
 
 ### CLI Arguments
 
 Example
 
 ```bash
-python -m build --models qwq --submit
+python -m main --models qwq --submit
 ```
 
 ```text
-usage: build.py [-h] --models MODELS [--build-dir BUILD_DIR] [--submit] [--no-build-scripts]
+usage: main.py [-h] --models MODELS [--build-dir BUILD_DIR] [--submit] [--no-build-scripts]
 
 Generate Dockerfile and cloudbuild.yaml templates for Ollama models
 
@@ -50,7 +50,7 @@ options:
 
 Advantage of this method is that all arguments can be predefined without requiring an additional script (Bash or PowerShell) file to define CLI options.
 
-Modify the `build.py`
+Modify the `main.py`
 
 ```python
 if __name__ == "__main__":
@@ -65,7 +65,7 @@ if __name__ == "__main__":
 
 Run the build script
 
-`python -m build`
+`python -m main`
 
 [1]: https://medium.com/@vesharma.dev/how-to-save-17-000-a-month-by-self-hosting-deepseek-r1-on-google-cloud-run-gpu-6a186cc976b9
 [2]: https://cloud.google.com/blog/products/application-development/run-your-ai-inference-applications-on-cloud-run-with-nvidia-gpus/
